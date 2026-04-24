@@ -1,6 +1,6 @@
 extends Node
 
-@onready var small_cards_parent: Panel = $SmallCards
+@onready var small_cards_parent: TextureRect = $SmallCards
 @onready var big_cards_parent: Node = $BigCards
 
 var small_cards: Array[Card] = []

@@ -11,13 +11,13 @@ script = ExtResource("1_la0u8")
 anchors_preset = -1
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1208.0
-offset_top = 613.0
-offset_right = 1406.0
-offset_bottom = 751.0
+offset_left = 1255.0
+offset_top = 447.0
+offset_right = 1627.0
+offset_bottom = 793.0
 grow_horizontal = 1
 grow_vertical = 1
 required_item = ExtResource("3_3pl4i")
 
 [node name="TargetPosition" type="Marker2D" parent="ItemDropArea" unique_id=505623796]
-position = Vector2(123, 84)
+position = Vector2(171, 24)

@@ -1,23 +1,47 @@
 [gd_scene format=3 uid="uid://cerucin5td6cb"]
 
 [ext_resource type="Texture2D" uid="uid://cgpd4on4g61bh" path="res://Sprites/Background/Lamp.png" id="1_03h48"]
+[ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_tj7eo"]
+[ext_resource type="Texture2D" uid="uid://catwiuebv55f2" path="res://Sprites/Background/Wall.png" id="2_mjyp4"]
 [ext_resource type="Texture2D" uid="uid://d0yplelnb0bpt" path="res://Sprites/Background/Bookshelf.png" id="2_qu38w"]
 [ext_resource type="Texture2D" uid="uid://bcyy2ior6ccqw" path="res://Sprites/Background/Books.png" id="3_lstom"]
+[ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="3_y1e7j"]
 [ext_resource type="Texture2D" uid="uid://b2tx0p0rvkme0" path="res://Sprites/Background/CrystalBall.png" id="4_8egnn"]
 [ext_resource type="Texture2D" uid="uid://cmh5dqwaqc86c" path="res://Sprites/Background/Desk.png" id="5_arq0n"]
 [ext_resource type="Texture2D" uid="uid://cu4citckkerp4" path="res://Sprites/Background/LightBulb.png" id="6_wmy7p"]
 [ext_resource type="Texture2D" uid="uid://qjik6804vt6k" path="res://Sprites/Background/Table.png" id="7_oxgl2"]
 [ext_resource type="Texture2D" uid="uid://bkl14v3ih0fvu" path="res://Sprites/Background/Window.png" id="8_3xykw"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="9_lmr8f"]
-[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="10_031wo"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="11_pqupb"]
+[ext_resource type="Texture2D" uid="uid://di47lj0iiq1qj" path="res://Sprites/Background/Scale.png" id="12_a5u6s"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="12_ijtto"]
+[ext_resource type="Texture2D" uid="uid://bnmy0u3thqpx8" path="res://Sprites/Background/Clock.png" id="13_ka8xs"]
+[ext_resource type="Texture2D" uid="uid://co31wx6k2as80" path="res://Sprites/Background/PencilJar.png" id="14_l332i"]
+[ext_resource type="Texture2D" uid="uid://dt0a6etrml81u" path="res://Sprites/Background/Chest.png" id="15_22s2l"]
+[ext_resource type="Texture2D" uid="uid://djv6jg02bo0cs" path="res://Sprites/Background/Wardrobe.png" id="16_walq5"]
+[ext_resource type="Texture2D" uid="uid://d0oj5cybwavxn" path="res://Sprites/Background/TV.png" id="17_ejv87"]
+[ext_resource type="Texture2D" uid="uid://d0kfxlaj51or7" path="res://Sprites/Background/WeirdMask.png" id="18_tsi7o"]
+[ext_resource type="Texture2D" uid="uid://cqssh3rcjd268" path="res://Sprites/Background/ScaryMask.png" id="19_gx0k8"]
+[ext_resource type="Texture2D" uid="uid://c3gfqcld8e0m5" path="res://Sprites/Background/Meds.png" id="20_llwn1"]
+[ext_resource type="Texture2D" uid="uid://c1d50w80guhr1" path="res://Sprites/Background/Perfume.png" id="21_ndnsc"]
+[ext_resource type="Texture2D" uid="uid://bttgm556kt8gj" path="res://Sprites/Background/Plant.png" id="22_c0iiq"]
+[ext_resource type="Texture2D" uid="uid://kmknl30m2oye" path="res://Sprites/Background/Protein.png" id="23_mw6fo"]
+[ext_resource type="Texture2D" uid="uid://v3v23w7saabr" path="res://Sprites/Background/CrackedPhone.png" id="24_jkmmp"]
 
 [node name="Room4" type="Node2D" unique_id=1276671648]
+script = ExtResource("1_tj7eo")
+left_room_path = "res://Rooms/Room3.tscn"
+right_room_path = "res://Rooms/Room1.tscn"
 
 [node name="BackgorundSprites" type="Node2D" parent="." unique_id=1847405546]
 
-[node name="Background" type="Sprite2D" parent="BackgorundSprites" unique_id=238863162]
+[node name="Wall" type="Sprite2D" parent="BackgorundSprites" unique_id=1526937745]
+position = Vector2(960, 540)
+texture = ExtResource("2_mjyp4")
+
+[node name="Floor" type="Sprite2D" parent="BackgorundSprites/Wall" unique_id=114018102]
+position = Vector2(0, 800)
+texture = ExtResource("3_y1e7j")
 
 [node name="Lamp" type="Sprite2D" parent="BackgorundSprites" unique_id=1826788524]
 position = Vector2(1408, 578)
@@ -51,6 +75,45 @@ texture = ExtResource("7_oxgl2")
 position = Vector2(1408, 578)
 texture = ExtResource("8_3xykw")
 
+[node name="Scale" type="Sprite2D" parent="BackgorundSprites" unique_id=1820538125]
+texture = ExtResource("12_a5u6s")
+
+[node name="Clock" type="Sprite2D" parent="BackgorundSprites" unique_id=1614265633]
+texture = ExtResource("13_ka8xs")
+
+[node name="PencilJar" type="Sprite2D" parent="BackgorundSprites" unique_id=1135435978]
+texture = ExtResource("14_l332i")
+
+[node name="Chest" type="Sprite2D" parent="BackgorundSprites" unique_id=640113940]
+texture = ExtResource("15_22s2l")
+
+[node name="Wardrobe" type="Sprite2D" parent="BackgorundSprites" unique_id=1729554899]
+texture = ExtResource("16_walq5")
+
+[node name="TV" type="Sprite2D" parent="BackgorundSprites" unique_id=1350395468]
+texture = ExtResource("17_ejv87")
+
+[node name="WeirdMask" type="Sprite2D" parent="BackgorundSprites" unique_id=1729177094]
+texture = ExtResource("18_tsi7o")
+
+[node name="ScaryMask" type="Sprite2D" parent="BackgorundSprites" unique_id=1009607577]
+texture = ExtResource("19_gx0k8")
+
+[node name="Meds" type="Sprite2D" parent="BackgorundSprites" unique_id=148631076]
+texture = ExtResource("20_llwn1")
+
+[node name="Perfume" type="Sprite2D" parent="BackgorundSprites" unique_id=1297856122]
+texture = ExtResource("21_ndnsc")
+
+[node name="Plant" type="Sprite2D" parent="BackgorundSprites" unique_id=1709389033]
+texture = ExtResource("22_c0iiq")
+
+[node name="Protein" type="Sprite2D" parent="BackgorundSprites" unique_id=1024476843]
+texture = ExtResource("23_mw6fo")
+
+[node name="CrackedPhone" type="Sprite2D" parent="BackgorundSprites" unique_id=345978191]
+texture = ExtResource("24_jkmmp")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1817150608]
 
 [node name="ItemDropArea" parent="CanvasLayer" unique_id=748105193 instance=ExtResource("9_lmr8f")]
@@ -62,22 +125,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 
-[node name="LeftArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=271686647]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -65.75
-offset_right = 335.0
-offset_bottom = 65.75
-grow_vertical = 2
-text = "<-------
-sageata stanga"
-script = ExtResource("10_031wo")
-destination_room_path = "res://Rooms/Room2.tscn"
-
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("11_pqupb")]
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("12_ijtto")]
-
-[connection signal="pressed" from="CanvasLayer/SceneSwitchers/LeftArrow" to="CanvasLayer/SceneSwitchers/LeftArrow" method="_on_pressed"]

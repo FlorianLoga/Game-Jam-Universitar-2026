@@ -17,7 +17,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -113.0
-offset_top = 347.0
+offset_top = 250.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_7cfyf")
@@ -37,7 +37,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="ItemSlot" type="Panel" parent="MarginContainer/GridContainer" unique_id=1299292013]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 script = ExtResource("1_la3np")
 
@@ -53,7 +53,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ItemSlot2" type="Panel" parent="MarginContainer/GridContainer" unique_id=1008984434]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 script = ExtResource("1_la3np")
 
@@ -68,7 +68,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ItemSlot3" type="Panel" parent="MarginContainer/GridContainer" unique_id=1951185081]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 script = ExtResource("1_la3np")
 
@@ -83,7 +83,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ItemSlot4" type="Panel" parent="MarginContainer/GridContainer" unique_id=1902091960]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 script = ExtResource("1_la3np")
 
@@ -98,7 +98,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ItemSlot5" type="Panel" parent="MarginContainer/GridContainer" unique_id=1342531857]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 script = ExtResource("1_la3np")
 
@@ -113,7 +113,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ItemSlot6" type="Panel" parent="MarginContainer/GridContainer" unique_id=185580632]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 script = ExtResource("1_la3np")
 
@@ -128,7 +128,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ItemSlot7" type="Panel" parent="MarginContainer/GridContainer" unique_id=1952324576]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 script = ExtResource("1_la3np")
 
@@ -142,8 +142,23 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
+[node name="ItemSlot8" type="Panel" parent="MarginContainer/GridContainer" unique_id=1183453518]
+custom_minimum_size = Vector2(98, 98)
+layout_mode = 2
+script = ExtResource("1_la3np")
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/GridContainer/ItemSlot8" unique_id=1101295595]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
 [node name="SelectionBorder" type="Panel" parent="MarginContainer" unique_id=156680875]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2

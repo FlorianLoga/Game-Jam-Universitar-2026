@@ -1,28 +1,30 @@
 [gd_scene format=3 uid="uid://c7l1ypa7s2h8m"]
 
 [ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_iehj0"]
-[ext_resource type="Texture2D" uid="uid://cpxrljdpsu3ve" path="res://Sprites/Placeholders/Rooms/Room2.png" id="2_1a11v"]
+[ext_resource type="Texture2D" uid="uid://catwiuebv55f2" path="res://Sprites/Background/Wall.png" id="2_j8d48"]
+[ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="3_ipfbv"]
 [ext_resource type="PackedScene" uid="uid://baoxv5vjmbtil" path="res://Puzzles/Moon.tscn" id="3_qsv4v"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_a5nxq"]
 [ext_resource type="Texture2D" uid="uid://brwtj0n2mr6xn" path="res://Sprites/Background/MoonStandEmpty.png" id="4_j8d48"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_xiq1f"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_qsv4v"]
-[ext_resource type="PackedScene" uid="uid://c0vdnne1i4v1n" path="res://scenes/misc/interaction system/interactable_area.tscn" id="6_xiq1f"]
 [ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/SceneSwitchers/Mirror.png" id="7_wjqet"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjqet"]
-size = Vector2(253, 285)
-
-[node name="Room2" type="Node2D" unique_id=104392886 node_paths=PackedStringArray("mirror")]
+[node name="Room2" type="Node2D" unique_id=104392886]
 script = ExtResource("1_iehj0")
 room_3d_path = "res://scenes/3d/mainroom.tscn"
-mirror = NodePath("Mirror")
 left_room_path = "res://Rooms/Room1.tscn"
 right_room_path = "res://Rooms/Room3.tscn"
 
-[node name="Background" type="Sprite2D" parent="." unique_id=2066755265]
+[node name="BackgroundSprites" type="Node2D" parent="." unique_id=1383472188]
+
+[node name="Wall" type="Sprite2D" parent="BackgroundSprites" unique_id=2099410039]
 position = Vector2(960, 540)
-texture = ExtResource("2_1a11v")
+texture = ExtResource("2_j8d48")
+
+[node name="Floor" type="Sprite2D" parent="BackgroundSprites/Wall" unique_id=158961453]
+position = Vector2(0, 800)
+texture = ExtResource("3_ipfbv")
 
 [node name="Moon" parent="." unique_id=1789782810 instance=ExtResource("3_qsv4v")]
 
@@ -40,61 +42,32 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 
-[node name="LeftArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=2105599197]
+[node name="Mirror" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=217423170]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -65.75
-offset_right = 335.0
-offset_bottom = 65.75
+offset_left = 390.0
+offset_top = -359.0
+offset_right = 782.0
+offset_bottom = 338.0
 grow_vertical = 2
-text = "<-------
-sageata stanga"
 script = ExtResource("4_xiq1f")
-destination_room_path = "res://Rooms/Room1.tscn"
+destination_room_path = "res://scenes/3d/mainroom.tscn"
 
-[node name="RightArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=1092760468]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -167.5
-offset_top = -131.5
-offset_right = 167.5
-grow_horizontal = 2
-grow_vertical = 0
-text = "------->
-sageata dreapta"
-script = ExtResource("4_xiq1f")
-destination_room_path = "res://Rooms/Room3.tscn"
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/Mirror" unique_id=790678593]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -2.9999847
+offset_right = 564.0
+offset_bottom = 1000.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_wjqet")
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("4_a5nxq")]
 mouse_filter = 2
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("6_qsv4v")]
 
-[node name="Mirror" parent="." unique_id=1741734881 instance=ExtResource("6_xiq1f")]
-position = Vector2(498, 376)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror" unique_id=2002972602]
-position = Vector2(116.5, 132.5)
-shape = SubResource("RectangleShape2D_wjqet")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mirror" unique_id=1401500064]
-position = Vector2(102, 125)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_wjqet")
-
-[node name="TEMP_Label" type="Label" parent="." unique_id=874444398]
-offset_left = 1135.0001
-offset_top = 614.00006
-offset_right = 1404.0001
-offset_bottom = 637.00006
-scale = Vector2(2.0587807, 2.667532)
-text = "Drag la cheie aici pentru The Moon"
-
-[connection signal="pressed" from="CanvasLayer/SceneSwitchers/LeftArrow" to="CanvasLayer/SceneSwitchers/LeftArrow" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/Mirror" to="CanvasLayer/SceneSwitchers/Mirror" method="_on_pressed"]
