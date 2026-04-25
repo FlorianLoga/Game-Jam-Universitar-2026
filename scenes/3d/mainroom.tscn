@@ -8,15 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_rfp5g"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_whf7h"]
 [ext_resource type="PackedScene" uid="uid://d35qijl2l5jdx" path="res://3D assets/Illusion.blend" id="6_5k5vb"]
-[ext_resource type="PackedScene" uid="uid://mrqt5s35qy47" path="res://3D assets/OGLINDA.tscn" id="6_nq88r"]
 [ext_resource type="Script" uid="uid://5dn58dedj0g6" path="res://Scripts/Puzzles3D/moon_3d.gd" id="10_2vkj2"]
-[ext_resource type="PackedScene" path="res://3D assets/luna.tscn" id="11_ntof2"]
+[ext_resource type="PackedScene" uid="uid://ixxg5srbckg2" path="res://3D assets/luna.tscn" id="11_ntof2"]
 [ext_resource type="Script" uid="uid://c1srst7838qj0" path="res://Scripts/Puzzles3D/star_3d.gd" id="12_vl5l8"]
 [ext_resource type="Script" uid="uid://0htjwty3extj" path="res://Scripts/Puzzles3D/temperance_3d.gd" id="13_gnvy8"]
-[ext_resource type="PackedScene" uid="uid://by17lu4nxjwgw" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
+[ext_resource type="PackedScene" uid="uid://j403tq8k44rm" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
 [ext_resource type="Script" uid="uid://jr6oloa7llj7" path="res://Scripts/Puzzles3D/hierophant_3d.gd" id="14_3epcx"]
-[ext_resource type="Script" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
+[ext_resource type="PackedScene" uid="uid://22hbh3dme6n0" path="res://3D assets/scenes/chest scene/cypher_chest.tscn" id="14_yuerg"]
+[ext_resource type="Script" uid="uid://c5jcpns81oxq3" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
 [ext_resource type="PackedScene" uid="uid://cp02prp35y6o4" path="res://3D assets/Objects/ouija_board_planchette.tscn" id="15_gnvy8"]
+[ext_resource type="PackedScene" uid="uid://b236em5apfa8c" path="res://3D assets/scenes/chest scene/cypher_only.tscn" id="15_ntof2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,7 +31,7 @@ background_mode = 2
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_ujn77")
 tonemap_mode = 2
-tonemap_exposure = 0.05
+tonemap_exposure = 0.35
 glow_enabled = true
 fog_sun_scatter = 0.27
 fog_density = 0.0469
@@ -47,11 +48,11 @@ albedo_color = Color(7.123351e-06, 0.86968774, 0.50454617, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_rfp5g"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_fep6r"]
-radius = 0.37676045
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuerg"]
+size = Vector3(1.7573242, 3.2219238, 2.4969482)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rfp5g"]
-size = Vector3(1.6264648, 2.9854736, 2.3740234)
+size = Vector3(2.1150513, 4.2631226, 3.2978516)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5k5vb"]
 size = Vector3(27.173248, 1, 29.495453)
@@ -89,6 +90,12 @@ size = Vector3(0.5234375, 1.7374916, 1.3297691)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2anc7"]
 size = Vector3(6.533661, 8.379272, 6.3154907)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3wu1q"]
+size = Vector3(1.0214844, 1.2754211, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4aj2b"]
+size = Vector3(4.500122, 4.30719, 5.249878)
 
 [node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile")]
 script = ExtResource("1_j7t7n")
@@ -184,7 +191,7 @@ size = Vector3(1, 0.42626953, 2.6323242)
 [node name="CardsDisplay" parent="." unique_id=2004390668 instance=ExtResource("5_whf7h")]
 
 [node name="actual_mirror" type="StaticBody3D" parent="." unique_id=974036244 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.060006, 4.0611067, 2.591559)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.126584, 4.0611067, 2.591559)
 script = ExtResource("4_fep6r")
 area = NodePath("InteractableArea3D")
 object = NodePath(".")
@@ -195,20 +202,19 @@ visible = false
 mesh = SubResource("SphereMesh_rfp5g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="actual_mirror" unique_id=1666123090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048498392, 0, 0)
-shape = SubResource("SphereShape3D_fep6r")
-
-[node name="Oglinda" parent="actual_mirror" unique_id=1936767386 instance=ExtResource("6_nq88r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038677216, 0.73453784, 0.13780904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33016396, 0.79870605, 0.0770874)
+shape = SubResource("BoxShape3D_yuerg")
+debug_color = Color(0.0011800425, 8.983542, 7.0685515, 1)
 
 [node name="InteractableArea3D" parent="actual_mirror" unique_id=563925380 instance=ExtResource("3_rfp5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14705658, -0.7613945, -0.056808233)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="actual_mirror/InteractableArea3D" unique_id=1447041756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00671196, 0.9927366, -0.019042969)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23758125, 1.6315613, -0.0014648438)
 shape = SubResource("BoxShape3D_rfp5g")
+debug_color = Color(7.4990616, 6.40278, 0, 1)
 
-[node name="Illusion" parent="." unique_id=95657958 instance=ExtResource("6_5k5vb")]
+[node name="Illusion" parent="." unique_id=1785194980 instance=ExtResource("6_5k5vb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0552967, 0.67229176, -3.7929158)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Illusion" unique_id=707953608]
@@ -256,6 +262,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.643009, 0.0879699, 4.572483
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Illusion/StaticBody3D6" unique_id=2065588007]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7390747, 0.66204834, 1.403305)
 shape = SubResource("BoxShape3D_bkpln")
+debug_color = Color(0.7683446, 0.15931225, 1, 1)
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="Illusion" unique_id=166855406]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4318495, 0.15283501, 9.350231)
@@ -329,13 +336,33 @@ shape = SubResource("BoxShape3D_2anc7")
 [node name="Temperance3D" type="Node" parent="Puzzles3D" unique_id=1147493463]
 script = ExtResource("13_gnvy8")
 
-[node name="CypherChest" type="Node3D" parent="Puzzles3D/Temperance3D" unique_id=2047094176]
-script = ExtResource("4_fep6r")
-metadata/_custom_type_script = "uid://3hq0fuvsjl70"
-
 [node name="Scales" type="Node3D" parent="Puzzles3D/Temperance3D" unique_id=2129855317]
 script = ExtResource("4_fep6r")
 metadata/_custom_type_script = "uid://3hq0fuvsjl70"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzles3D/Temperance3D" unique_id=525020287 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.674192, 0.88286996, 2.3648462)
+script = ExtResource("4_fep6r")
+area = NodePath("../InteractableArea3D")
+object = NodePath(".")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Temperance3D/StaticBody3D" unique_id=970884497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3564453, 1.3252304, -0.13806987)
+shape = SubResource("BoxShape3D_3wu1q")
+debug_color = Color(0, 5.664598, 2.3738923, 1)
+
+[node name="Cypher_chest" parent="Puzzles3D/Temperance3D/StaticBody3D" unique_id=617163078 instance=ExtResource("14_yuerg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7762246, -0.18286997, -0.06901097)
+
+[node name="InteractableArea3D" parent="Puzzles3D/Temperance3D" unique_id=1454923962 instance=ExtResource("3_rfp5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.401751, 0.8667474, 2.0601647)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Temperance3D/InteractableArea3D" unique_id=1463672495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36480713, 1.653595, 0.05303955)
+shape = SubResource("BoxShape3D_4aj2b")
+debug_color = Color(0.70980394, 0.4862745, 0, 1)
+
+[node name="Cypher_only" parent="Puzzles3D/Temperance3D" unique_id=343116895 instance=ExtResource("15_ntof2")]
 
 [node name="Hierophant3D" type="Node" parent="Puzzles3D" unique_id=1521141426]
 script = ExtResource("14_3epcx")
