@@ -105,13 +105,13 @@ size = Vector3(1.0214844, 1.2754211, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4aj2b"]
 size = Vector3(4.500122, 4.30719, 5.249878)
 
-[node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile", "zoom_camera")]
 [sub_resource type="BoxShape3D" id="BoxShape3D_1o1v0"]
 size = Vector3(1.7891235, 3.2866821, 1.564209)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_736gg"]
 size = Vector3(6.427246, 2.241455, 5.492218)
 
+[node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile", "zoom_camera")]
 script = ExtResource("1_j7t7n")
 spawnpos = NodePath("MirrorSpawnPos")
 player = NodePath("Player")
