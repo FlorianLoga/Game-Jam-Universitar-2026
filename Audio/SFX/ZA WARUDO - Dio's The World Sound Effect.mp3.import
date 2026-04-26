@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8gxxiq2gk0j1"
+path="res://.godot/imported/ZA WARUDO - Dio's The World Sound Effect.mp3-f1d89d44e463c4502712a4f47c391f3b.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/ZA WARUDO - Dio's The World Sound Effect.mp3"
+dest_files=["res://.godot/imported/ZA WARUDO - Dio's The World Sound Effect.mp3-f1d89d44e463c4502712a4f47c391f3b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

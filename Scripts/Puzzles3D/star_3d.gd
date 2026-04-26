@@ -41,7 +41,7 @@ func _on_zodiac_click():
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.STAR)
 	sfx_player_2.play()
 	TextManager.show_once("Zodiac_completed", [
-		"The Star. Seventeen. Hope and renewal...", 
+		"The Star. Number seventeen. Hope and renewal...", 
 		"a reminder that there’s actually a purpose to this mess."
 	])
 	SignalBus.star_completed.emit()

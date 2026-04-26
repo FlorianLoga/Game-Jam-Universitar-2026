@@ -16,7 +16,6 @@ func end_puzzle():
 	sfx_player.play()
 	TextManager.show_once("Moon_completed" , [
 		"The Moon. Number eighteen. Illusion and anxiety... fitting.", 
-		"It’s a warning that what I’m seeing isn't the whole truth.", 
 		"So all the cards are scattered between these mirrored realities."
 	])
 	SignalBus.moon_completed.emit()

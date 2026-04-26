@@ -60,9 +60,7 @@ func end_puzzle():
 	
 	TextManager.show_once("Magician_completed", [
 		"The Magician. Number one. It’s the card of manifestation",
-		"As above, so below It’s a hint", 
-		"that I actually have all the tools I need right here in front of me.",
-		"I need the other six if I’m going to fix this mess",
+		"I need the other six if I’m going to fix this mess"
 	])
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.MAGICIAN)
 	SignalBus.magician_completed.emit()
