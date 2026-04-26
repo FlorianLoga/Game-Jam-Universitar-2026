@@ -25,3 +25,4 @@ position = Vector2(171, 24)
 
 [node name="Sfx_Player" type="AudioStreamPlayer2D" parent="." unique_id=1802982001]
 stream = ExtResource("4_3pl4i")
+volume_db = 7.195

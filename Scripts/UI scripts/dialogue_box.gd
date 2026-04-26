@@ -53,10 +53,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			text_label.visible_characters = -1
 			is_typing = false
 			current_id += 1
-			await get_tree().create_timer(3.0).timeout
-			hide()
-			TextManager.dialogue_finished.emit()
-		else:
-			current_id += 1
+			await get_tree().create_timer(2.5).timeout
 			hide()
 			TextManager.dialogue_finished.emit()
