@@ -44,6 +44,9 @@ var left_weight : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if !PuzzleManager.chest_opened:
+		allsack.remove_from_group("Interactables")
+	
 	if PuzzleManager.all_sacks_picked_up: allsack.queue_free()
 	
 	if !PuzzleManager.complete_puzzles[PuzzleManager.puzzles.TEMPERANCE]:
@@ -80,7 +83,7 @@ func _on_chest_clicked():
 
 func _on_zoom_camera_cypher_cracked() -> void:
 	PuzzleManager.chest_opened = true
-	
+	allsack.add_to_group("Interactables")
 	sfx_player_3.play()
 	#things that unlock once chest is opened
 	allsack.interact = Callable(self, "_on_all_pickup")
