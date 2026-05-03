@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/SceneSwitchers/Mirror.png" id="7_wjqet"]
 [ext_resource type="Script" uid="uid://dgxccig7fib3l" path="res://Rooms/canvas_layer.gd" id="10_a6xs1"]
 [ext_resource type="Texture2D" uid="uid://bu8os322q1q3o" path="res://Sprites/Background/BrokenMirror.png" id="11_iwjsq"]
-[ext_resource type="Script" path="res://Rooms/new_mirror.gd" id="12_r2r2o"]
+[ext_resource type="Script" uid="uid://cmohrk42myhw4" path="res://Rooms/new_mirror.gd" id="12_r2r2o"]
 [ext_resource type="Texture2D" uid="uid://dhtdue5rkxpdp" path="res://Sprites/tarot cards/The Magician.png" id="16_r2r2o"]
 [ext_resource type="AudioStream" uid="uid://bxptw45oxloct" path="res://Audio/SFX/vortex.mp3" id="18_atu7q"]
 

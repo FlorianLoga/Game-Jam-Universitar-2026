@@ -17,4 +17,5 @@ func _on_mirror_pressed() -> void:
 		print("playing anim...")
 		animation_player.play("dissolve")
 		await animation_player.animation_finished
+		#process inputs freeze
 		SceneChanger.change_scene_to_path(destination_room_path)

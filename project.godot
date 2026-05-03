@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GameTeam12"
+config/name="ArcanaReflect"
 run/main_scene="uid://cgy0sf6c5rwgt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
