@@ -19,7 +19,7 @@ var curr_arr : Array[runes]
 
 func _ready():
 	curr_arr.resize(4)
-	curr_arr.fill(runes.FIRST)
+	curr_arr.fill(runes.THIRD)
 
 func _on_exit_pressed() -> void:
 	player.camera.make_current()
