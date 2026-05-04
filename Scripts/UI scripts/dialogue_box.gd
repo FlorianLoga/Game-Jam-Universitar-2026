@@ -1,8 +1,9 @@
 extends CanvasLayer
 
 @onready var text_label : Label = $PanelContainer/MarginContainer/HBoxContainer/Label
+@onready var skip_button: Button = $Skip
 
-var _typing_speed : float = 15.0
+var _typing_speed : float = 25.0
 var _typing_time : float = 0.0
 var is_typing : bool = false
 var current_id : int = 0
@@ -10,6 +11,16 @@ var current_id : int = 0
 func _ready() -> void:
 	hide()
 	TextManager.start_dialogue.connect(_on_start_dialogue)
+	skip_button.pressed.connect(_on_skip_pressed)
+
+func _on_skip_pressed() -> void:
+	if is_typing:
+		text_label.visible_characters = -1
+		is_typing = false
+		current_id += 1
+		await get_tree().create_timer(2.5).timeout
+		hide()
+		TextManager.dialogue_finished.emit()
 
 func _on_start_dialogue(text: String) -> void:
 	current_id += 1
@@ -46,13 +57,3 @@ func clear() -> void:
 	text_label.text = ""
 	text_label.visible_characters = 0
 	is_typing = false
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if is_typing:
-			text_label.visible_characters = -1
-			is_typing = false
-			current_id += 1
-			await get_tree().create_timer(2.5).timeout
-			hide()
-			TextManager.dialogue_finished.emit()

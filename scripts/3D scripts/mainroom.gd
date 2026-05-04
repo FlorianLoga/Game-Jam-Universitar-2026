@@ -3,7 +3,7 @@ extends Node3D
 @export var spawnpos : Marker3D
 @export var player : CharacterBody3D
 @export var scene_2D_path : String 
-
+@export var music_3d : AudioStream
 #var can_interact : bool = false
 @export var mirror : InteractableObject
 @export var zodiac_wheel : InteractableObject
@@ -13,10 +13,13 @@ extends Node3D
 @export var zoom_camera : Camera3D
 @onready var dissolve: ColorRect = $dissolve
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sfx_player_4: AudioStreamPlayer3D = $SfxPlayer4
 
 
 
 func _ready() -> void:
+	AudioManager.stop_music()
+	AudioManager.music_player_3d.play()
 	dissolve.visible = false
 	print(mirror.area.can_interact)
 	player.global_position = spawnpos.position
@@ -37,6 +40,7 @@ func _on_mirror_switch():
 	player.set_physics_process(false)
 	dissolve.visible = true
 	animation_player.play("dissolve")
+	sfx_player_4.play()
 	await animation_player.animation_finished
 	SceneChanger.change_scene_to_path.call_deferred(scene_2D_path)
 

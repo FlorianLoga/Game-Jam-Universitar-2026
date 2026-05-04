@@ -14,6 +14,7 @@ func _ready() -> void:
 	#pt tranzitia de la 3d, ca mouse-ul sa se vada din nou in 2d
 	
 	#can_switch = true
+	
 	SignalBus.world_completed.connect(disable_input)
 	
 	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.WORLD] == true:

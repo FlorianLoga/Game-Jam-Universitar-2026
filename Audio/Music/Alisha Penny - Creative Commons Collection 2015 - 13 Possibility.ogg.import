@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://iumvxytgac04"
+path="res://.godot/imported/Alisha Penny - Creative Commons Collection 2015 - 13 Possibility.ogg-9d01684774464f46102443d81c9c7d9a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Music/Alisha Penny - Creative Commons Collection 2015 - 13 Possibility.ogg"
+dest_files=["res://.godot/imported/Alisha Penny - Creative Commons Collection 2015 - 13 Possibility.ogg-9d01684774464f46102443d81c9c7d9a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
