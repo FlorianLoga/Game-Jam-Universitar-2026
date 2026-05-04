@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://by7serhcsuqfc"
-path="res://.godot/imported/Mind's Eye Full.wav-8276b8c9e003559bc8bea3c6f8c7fe90.sample"
+path="res://.godot/imported/Mind's Eye Full.wav-b0807d8d2ac3e4a2e6ccb05325455481.sample"
 
 [deps]
 
-source_file="res://Audio/Mind's Eye Full.wav"
-dest_files=["res://.godot/imported/Mind's Eye Full.wav-8276b8c9e003559bc8bea3c6f8c7fe90.sample"]
+source_file="res://Audio/Music/Mind's Eye Full.wav"
+dest_files=["res://.godot/imported/Mind's Eye Full.wav-b0807d8d2ac3e4a2e6ccb05325455481.sample"]
 
 [params]
 

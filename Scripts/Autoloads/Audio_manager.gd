@@ -7,12 +7,15 @@ var _sfx_bus : int
 var master_volume : float = 1.0
 var music_volume : float = 1.0
 var sfx_volume : float = 1.0
+
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
+@onready var music_player_3d: AudioStreamPlayer = $MusicPlayer3d
+
 func _ready() -> void:
 	_master_bus = AudioServer.get_bus_index("Master")
 	_music_bus  = AudioServer.get_bus_index("Music")
 	_sfx_bus    = AudioServer.get_bus_index("Sfx")
-
+	music_player.play() 
 
 func set_master_volume(value: float) -> void:
 	master_volume = value
@@ -34,3 +37,15 @@ func get_music_volume() -> float:
 
 func get_sfx_volume() -> float:
 	return sfx_volume
+	
+func play_music(stream: AudioStream) -> void:
+	music_player.stream = stream
+	music_player.play()
+	
+func play_music_3d(stream: AudioStream) -> void:
+	music_player_3d.stream = stream
+	music_player_3d.play()
+	
+func stop_music() -> void:
+	music_player.stop()
+	music_player_3d.stop()

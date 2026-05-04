@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bu8os322q1q3o" path="res://Sprites/Background/BrokenMirror.png" id="11_iwjsq"]
 [ext_resource type="Script" uid="uid://cmohrk42myhw4" path="res://Rooms/new_mirror.gd" id="12_r2r2o"]
 [ext_resource type="Texture2D" uid="uid://dhtdue5rkxpdp" path="res://Sprites/tarot cards/The Magician.png" id="16_r2r2o"]
-[ext_resource type="AudioStream" uid="uid://bxptw45oxloct" path="res://Audio/SFX/vortex.mp3" id="18_atu7q"]
+[ext_resource type="AudioStream" uid="uid://bm085t0y4w02f" path="res://Audio/SFX/mirror4.mp3" id="18_atu7q"]
 
 [sub_resource type="Shader" id="Shader_a6xs1"]
 code = "shader_type canvas_item;

@@ -14,13 +14,13 @@ border_color = Color(0.8, 0.8, 1, 1)
 script = ExtResource("1_di1it")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=213292219]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -161.0
-offset_right = -112.0
-offset_bottom = -44.0
+anchors_preset = -1
+anchor_top = 0.851
+anchor_right = 0.94200003
+anchor_bottom = 0.95900005
+offset_top = -0.08001709
+offset_right = -0.64001465
+offset_bottom = 0.27990723
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -46,16 +46,27 @@ custom_minimum_size = Vector2(2, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 52
-text = "Da ma  dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+theme_override_font_sizes/font_size = 29
+text = "Da ma  da"
 vertical_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 2
 clip_text = true
 
-[node name="End" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1518274552]
-custom_minimum_size = Vector2(2, 0)
-layout_mode = 2
+[node name="Skip" type="Button" parent="." unique_id=831632040]
+custom_minimum_size = Vector2(156.67, 53.24)
+anchors_preset = -1
+anchor_left = 0.855
+anchor_top = 0.878
+anchor_right = 0.934
+anchor_bottom = 0.94900006
+offset_left = -0.6002197
+offset_top = -0.24005127
+offset_right = 4.3898926
+offset_bottom = 2.079956
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.975, 0.975)
+size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 52
-text = "*"
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 32
+text = "Skip"
